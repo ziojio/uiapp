@@ -3,15 +3,13 @@ package uiapp;
 import android.app.Application;
 import android.content.pm.ApplicationInfo;
 import android.os.SystemClock;
-import android.util.Log;
-
-import androidx.annotation.NonNull;
 
 import com.tencent.mmkv.MMKV;
 
 import java.io.File;
 import java.util.Date;
 
+import androidx.annotation.NonNull;
 import androidz.App;
 import androidz.AppUtil;
 import dagger.hilt.android.HiltAndroidApp;
@@ -39,8 +37,6 @@ public class UIApp extends Application {
     public void onCreate() {
         super.onCreate();
         uiApp = this;
-
-        Log.d("UIApp", "onCreate " + this);
         long start = SystemClock.elapsedRealtime();
         if (AppUtil.isDebuggable(this)) {
             Timber.plant(new FileLogTree(new File(LogUtil.getLogDir(this), LogUtil.getLogFileName(new Date()))));
@@ -52,11 +48,12 @@ public class UIApp extends Application {
                 }
             });
         }
+        Timber.d("onCreate " + this);
         MMKV.initialize(this);
         appDB = AppDB.create(this);
 
         long time = SystemClock.elapsedRealtime() - start;
-        Log.d("UIApp", "init cost time " + time + "ms");
+        Timber.d("onCreate time " + time + "ms");
         AppCache.set("AAA", "aaa");
         String a = (String) AppCache.get("A");
 

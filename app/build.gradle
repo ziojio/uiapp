@@ -29,10 +29,10 @@ android {
     }
 
     signingConfigs {
-        def localProperties = new Properties()
-        localProperties.load(new FileReader(rootProject.file("local.properties")))
-        if (localProperties.containsKey("storeFile")) {
-            release {
+        release {
+            def localProperties = new Properties()
+            localProperties.load(new FileReader(rootProject.file("local.properties")))
+            if (localProperties.containsKey("storeFile")) {
                 storeFile rootProject.file(localProperties["storeFile"])
                 storePassword localProperties["storePassword"]
                 keyAlias localProperties["keyAlias"]

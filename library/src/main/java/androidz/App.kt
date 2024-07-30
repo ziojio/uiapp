@@ -18,13 +18,11 @@ import androidx.lifecycle.ViewModelStoreOwner
 object App : Application(), ViewModelStoreOwner, HasDefaultViewModelProviderFactory {
     private lateinit var app: Application
 
+    @JvmStatic
     fun attachApplication(application: Application) {
         app = application
         attachBaseContext(application.baseContext)
     }
-
-    @JvmField
-    val globalData: MutableMap<String, Any> = mutableMapOf()
 
     val isDebuggable: Boolean by lazy {
         applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE > 0
