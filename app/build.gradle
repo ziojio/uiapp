@@ -10,11 +10,11 @@ kotlin {
 }
 
 android {
-    namespace 'uiapp'
+    namespace 'demo'
     compileSdk appCompileSdk
 
     defaultConfig {
-        applicationId 'com.ziojio.uiapp'
+        applicationId 'androidz.demo'
         minSdk appMinSdk
         targetSdk appTargetSdk
         versionCode 3
@@ -66,8 +66,8 @@ dependencies {
 
     implementation project(':composex')
     implementation project(':hummerx')
-    // implementation project(':library')
-    implementation "com.github.ziojio:androidz:1.0.2"
+    implementation project(':library')
+//    implementation "com.github.ziojio:androidz:1.0.2"
 
     // Google Android
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
