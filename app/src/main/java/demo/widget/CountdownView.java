@@ -11,7 +11,7 @@ import androidx.appcompat.widget.AppCompatTextView;
  * github : https://github.com/getActivity/AndroidProject
  * desc   : 验证码倒计时
  */
-public final class CountdownView extends AppCompatTextView implements Runnable {
+public class CountdownView extends AppCompatTextView implements Runnable {
 
     /**
      * 倒计时秒数

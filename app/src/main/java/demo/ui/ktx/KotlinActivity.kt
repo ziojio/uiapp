@@ -25,13 +25,10 @@ class KotlinActivity : BaseActivity() {
             Timber.d("onCreate: ${viewModel.date.value}")
         }
 
-        App.globalData["a"] = "A"
         Timber.d("onCreate: $App")
         Timber.d("onCreate: ${App.isDebuggable}")
         Timber.d("onCreate: ${App.applicationInfo}")
         Timber.d("onCreate: ${App.packageInfo}")
-        Timber.d("onCreate: ${App.globalData}")
-
     }
 
 }

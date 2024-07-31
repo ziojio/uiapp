@@ -7,6 +7,7 @@ import androidx.core.graphics.ColorUtils
 
 object ColorUtil {
 
+    @JvmOverloads
     fun isDarkColor(
         @ColorInt color: Int,
         @FloatRange(from = 0.0, to = 1.0) luminance: Float = 0.5f
@@ -14,6 +15,7 @@ object ColorUtil {
         return color != Color.TRANSPARENT && ColorUtils.calculateLuminance(color) < luminance
     }
 
+    @JvmOverloads
     fun isLightColor(
         @ColorInt color: Int,
         @FloatRange(from = 0.0, to = 1.0) luminance: Float = 0.5f

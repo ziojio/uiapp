@@ -9,7 +9,6 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-
 import demo.R;
 
 /**
@@ -17,7 +16,7 @@ import demo.R;
  * github : https://github.com/getActivity/AndroidProject
  * desc   : 按照比例显示的 FrameLayout
  */
-public final class RatioFrameLayout extends FrameLayout {
+public class RatioFrameLayout extends FrameLayout {
     private float widthRatio;
     private float heightRatio;
 

@@ -4,13 +4,12 @@ import android.app.Application;
 import android.content.pm.ApplicationInfo;
 import android.os.SystemClock;
 
-import androidx.annotation.NonNull;
-
 import com.tencent.mmkv.MMKV;
 
 import java.io.File;
 import java.util.Date;
 
+import androidx.annotation.NonNull;
 import androidz.App;
 import androidz.AppUtil;
 import dagger.hilt.android.HiltAndroidApp;
@@ -52,14 +51,11 @@ public class UIApp extends Application {
         Timber.d("onCreate " + this);
         MMKV.initialize(this);
         appDB = AppDB.create(this);
-
         long time = SystemClock.elapsedRealtime() - start;
         Timber.d("onCreate time " + time + "ms");
         AppCache.set("AAA", "aaa");
         String a = (String) AppCache.get("A");
-
         Timber.d("onCreate isDebuggable " + App.INSTANCE.isDebuggable());
-        Timber.d("onCreate globalData " + App.globalData);
     }
 
     public static boolean debuggable() {
