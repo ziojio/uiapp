@@ -1,7 +1,5 @@
 package demo.ui.fragment.homepage;
 
-import static android.content.Context.CONNECTIVITY_SERVICE;
-
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -18,17 +16,16 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.DividerItemDecoration;
-
 import com.google.android.material.snackbar.Snackbar;
 
 import java.lang.reflect.Field;
 
 import javax.inject.Inject;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidz.LoadingDialog;
 import composex.ui.ComposeActivity;
 import dagger.hilt.android.AndroidEntryPoint;
@@ -50,6 +47,8 @@ import demo.ui.paging.Paging3Activity;
 import demo.util.KeyboardWatcher;
 import demo.web.WebActivity;
 import timber.log.Timber;
+
+import static android.content.Context.CONNECTIVITY_SERVICE;
 
 @AndroidEntryPoint
 public class HomeFragment extends BaseFragment {
@@ -86,11 +85,8 @@ public class HomeFragment extends BaseFragment {
         ActivityHomeBinding binding = ActivityHomeBinding.bind(view);
 
         String[] strings = new String[]{
-                execute, snackbar, popup,
-                database, dialog, compose,
-                animation, dataBinding, edit,
-                http, ktx, rxJava,
-                webview, paging, webSocket
+                execute, snackbar, popup, database, dialog, compose,
+                animation, dataBinding, edit, http, ktx, rxJava, webview, paging, webSocket
         };
         binding.recyclerview.addItemDecoration(new DividerItemDecoration(requireActivity(), DividerItemDecoration.VERTICAL));
         binding.recyclerview.setAdapter(new BaseAdapter<String, BindingViewHolder<ItemHomeFunBinding>>(strings) {

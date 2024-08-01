@@ -17,9 +17,9 @@ public class Androidz {
 
     public static void initialize(Context context) {
         App.attachApplication((Application) context.getApplicationContext());
-        debuggable = isDebuggable();
+        debuggable = App.INSTANCE.isDebuggable();
         if (isDebuggable()) {
-            ActivityStackManager.getInstance().register((Application) context);
+            ActivityStackManager.INSTANCE.register((Application) context);
         }
     }
 
@@ -44,6 +44,6 @@ public class Androidz {
     }
 
     public static void setLogger(Logger logger) {
-        Logger.Companion.setDefault(logger);
+        Logger.setLogger(logger);
     }
 }

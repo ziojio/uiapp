@@ -19,15 +19,12 @@ import androidx.annotation.Nullable;
  */
 public class ActivityStackManager implements ActivityLifecycleCallbacks {
     private static final String TAG = "ActivityStackManager";
-    private static final ActivityStackManager ME = new ActivityStackManager();
+
+    public static final ActivityStackManager INSTANCE = new ActivityStackManager();
 
     private final ArrayDeque<Activity> stack = new ArrayDeque<>();
 
     private Application application;
-
-    public static ActivityStackManager getInstance() {
-        return ME;
-    }
 
     public boolean isRegistered() {
         return application != null;
