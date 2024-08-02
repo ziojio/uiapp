@@ -2,6 +2,8 @@ package demo;
 
 import android.app.Application;
 import android.content.pm.ApplicationInfo;
+import android.os.Build;
+import android.os.StrictMode;
 import android.os.SystemClock;
 
 import com.tencent.mmkv.MMKV;
@@ -39,6 +41,7 @@ public class UIApp extends Application {
         uiApp = this;
         long start = SystemClock.elapsedRealtime();
         if (AppUtil.isDebuggable(this)) {
+            // StrictMode.enableDefaults();
             Timber.plant(new FileLogTree(new File(LogUtil.getLogDir(this), LogUtil.getLogFileName(new Date()))));
             Timber.plant(new Timber.DebugTree() {
                 @Override
@@ -53,9 +56,6 @@ public class UIApp extends Application {
         appDB = AppDB.create(this);
         long time = SystemClock.elapsedRealtime() - start;
         Timber.d("onCreate time " + time + "ms");
-        AppCache.set("AAA", "aaa");
-        String a = (String) AppCache.get("A");
-        Timber.d("onCreate isDebuggable " + App.INSTANCE.isDebuggable());
     }
 
     public static boolean debuggable() {

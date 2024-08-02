@@ -20,7 +20,7 @@ class AndroidzInitializer implements Initializer<AndroidzInitializer> {
 
     @NonNull
     @Override
-    public List<Class<? extends androidx.startup.Initializer<?>>> dependencies() {
+    public List<Class<? extends Initializer<?>>> dependencies() {
         return Collections.emptyList();
     }
 }
