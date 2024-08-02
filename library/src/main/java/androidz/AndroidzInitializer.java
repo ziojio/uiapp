@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.startup.Initializer;
 
 
-class AndroidzInitializer implements Initializer<AndroidzInitializer> {
+public class AndroidzInitializer implements Initializer<AndroidzInitializer> {
 
     @NonNull
     @Override
